@@ -124,32 +124,3 @@ Send a JSON object with these three fields:
 ```
 
 Always check `response["success"]` before using `response["temperature"]`.
-
----
-
-## UML Sequence Diagram
-
-```mermaid
-sequenceDiagram
-    participant Client as Your Program
-    participant WS as Weather Service
-    participant Geo as Open-Meteo Geocoding API
-    participant Weather as Open-Meteo Weather API
-
-    Client->>WS: JSON request (action, location, unit)
-
-    alt invalid request (bad unit, missing location, etc.)
-        WS-->>Client: {"success": false, "error": "..."}
-    else valid request
-        WS->>Geo: search location name
-        Geo-->>WS: latitude, longitude
-
-        alt location not found
-            WS-->>Client: {"success": false, "error": "Location was not found."}
-        else location found
-            WS->>Weather: get current temperature
-            Weather-->>WS: temperature value
-            WS-->>Client: {"success": true, "temperature": 64.2, ...}
-        end
-    end
-```
