@@ -22,16 +22,6 @@ Leave this running in its own terminal. It listens on `tcp://127.0.0.1:5556` and
 
 ---
 
-## Running the Test Client
-
-Open a second terminal while the service is running:
-
-```bash
-python3 test_client.py
-```
-
----
-
 ## Adding This to Your Program
 
 You need two things: the `pyzmq` library installed, and the service running in a separate terminal.
