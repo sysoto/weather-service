@@ -116,5 +116,5 @@ Send a JSON object with these three fields:
 
 Always check `response["success"]` before using `response["temperature"]`.
 
-
+## UML Diagram
 <img width="1442" height="934" alt="UML Diagram Weather Service" src="https://github.com/user-attachments/assets/eff0156c-1beb-4e84-8e4d-d53a13ba5da8" />
